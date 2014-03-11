@@ -1,4 +1,6 @@
 You can send any data to Plotter and it will magically add an auto-scaled chart to all currently listening dashboards.
+
+<img src="http://i.imgur.com/6wfMb2D.png"></img>
 ###Getting Started
 
 Download Plotter and change the auth token in `index.js`.
