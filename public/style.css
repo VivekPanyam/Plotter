@@ -1,0 +1,78 @@
+body {
+	font-family: "Helvetica Neue","Lucida Grande", sans-serif;
+	font-size: 12px;
+}
+
+.title {
+	color: #333;
+	font-size: 16px;
+	margin-top: 0;
+	float: left;
+	margin-left:20px;
+	font-weight: bold;
+	margin-bottom: 6px;
+	text-shadow: 0 1px 0 #fff;
+	line-height: 100%;
+}
+
+.line {
+	  pointer-events: all;
+}
+
+.click-capture {
+	position: absolute;
+}
+
+.curr_value {
+	color: #000;
+	font-size: 16px;
+	font-weight: bold;
+	float: right;
+	margin-top: -4px;
+	border: 1px solid #E1E1E1;
+	width: 17%;
+	padding: 2px 0;
+	text-align: center;
+	border-radius: 5px;
+	background: #fff;
+}
+
+.chart_info {
+	font-size: 11px;
+	font-weight: normal;
+	height: 12px;
+	margin: 0px 0 3px 0;
+	clear: left;
+}
+
+.chartdiv {
+	max-width: 50%;
+	width:50%;
+	display:inline-block;
+}
+
+svg {
+	font: 10px sans-serif;
+}
+.x.axis line {
+  shape-rendering: auto;
+}
+
+.x.axis {
+	display: none;
+}
+
+.axis {
+  fill: none;
+  stroke: #333;
+}
+
+svg:hover .axis {
+	display: block;
+}
+
+.line {
+  fill: none;
+  stroke: #2ca2d3;
+  stroke-width: 3px;
+}

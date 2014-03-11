@@ -1,0 +1,44 @@
+<html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<link rel="stylesheet" type="text/css"  href="style.css">
+<script src="/plotter.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<body>
+<script>
+function breakdown(obj) {
+	var str = "";
+	var sum = 0;
+	for (var key in obj) {
+		if (key == "title") continue;
+		str += key + ": " + obj[key] + ", "
+		sum += obj[key]
+	}
+	if (sum == 0 && isNumber(obj)) sum = obj;
+	return {value:sum, breakdown:str};
+}
+
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+var socket = io.connect('http://localhost');
+socket.on('data', function (data) {
+	data = JSON.parse(data.data);
+	for (var key in data) {
+		if (graphs[key] == null) {
+			graphs[key] = {chart: createGraph("chart_" + key, key)}
+		}
+
+		var value = data[key];
+		if (data[key].title != null) {
+			graphs[key].chart.setTitle(data[key].title);
+		}
+		graphs[key].chart.update(breakdown(data[key]));
+	}
+});
+
+var graphs = {};
+</script>
+</body>
+</html>
