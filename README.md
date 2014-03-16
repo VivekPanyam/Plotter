@@ -33,3 +33,6 @@ Check it out and let me know what you think!
 *Note: Plotter is still in alpha, please find issues and submit pull requests.*
 
 Plotter was inspired by [Tasseo](https://github.com/obfuscurity/tasseo) and [Scout Realtime](http://scoutapp.github.io/scout_realtime/).
+
+### License
+See the LICENSE file
